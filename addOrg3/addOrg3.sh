@@ -65,7 +65,7 @@ function generateEcuador() {
     infoln "Creating Ecuador Identities"
 
     set -x
-    cryptogen generate --config=ecuador-crypto.yaml --output="../organizations"
+    cryptogen generate --config=../organizations/cryptogen/crypto-config-ecuador.yaml --output="../organizations"
     res=$?
     { set +x; } 2>/dev/null
     if [ $res -ne 0 ]; then
@@ -186,7 +186,7 @@ CHANNEL_NAME="channeluniversidades"
 # use this as the docker compose couch file
 COMPOSE_FILE_COUCH_ORG3=docker/docker-compose-couch-ecuador.yaml
 # use this as the default docker-compose yaml definition
-COMPOSE_FILE_ORG3=docker/docker-compose-ecuador.yaml
+COMPOSE_FILE_ORG3=../organizations/fabric-ca/ecuador/fabric-ca-server-config.yaml
 # certificate authorities compose file
 COMPOSE_FILE_CA_ORG3=docker/docker-compose-ca-ecuador.yaml
 # default image tag
